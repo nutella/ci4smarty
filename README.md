@@ -12,4 +12,4 @@ Integration Codeigniter 4 and Smarty Template Engine
 Installation is best done via Composer. Assuming Composer is installed globally, you may use
 the following command: 
 
-    > composer require jerry-maheswara-github/ci4smarty
+    > composer require maheswara/ci4smarty
