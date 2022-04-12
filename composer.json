@@ -1,13 +1,14 @@
 {
     "name": "maheswara/ci4smarty",
     "type": "library",
-    "description": "Integration Codeigniter 4 and Smarty Tamplate Engine",
+    "description": "Integration Codeigniter 4 and Smarty Template Engine",
     "homepage": "https://github.com/jerry-maheswara-github/ci4smarty",
     "keywords": [
         "codeigniter",
         "codeigniter 4",
         "smarty",
-        "codeigniter smarty"
+        "codeigniter smarty",
+        "codeigniter 4 smarty"
     ],
     "license": "MIT",
     "authors": [

@@ -13,3 +13,10 @@ Installation is best done via Composer. Assuming Composer is installed globally,
 the following command: 
 
     > composer require maheswara/ci4smarty
+
+## Controller
+    use Ci4Smarty\Controllers\SmartyController;
+
+    class BaseController extends SmartyController{
+        
+    }
