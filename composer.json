@@ -1,0 +1,34 @@
+{
+    "name": "jerry-maheswara-github/ci4smarty",
+    "type": "library",
+    "description": "Integration Codeigniter 4 and Smarty Tamplate Engine",
+    "homepage": "https://github.com/jerry-maheswara-github/ci4smarty",
+    "keywords": [
+        "codeigniter",
+        "codeigniter 4",
+        "smarty",
+        "codeigniter smarty"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jerry Maheswara",
+            "email": "jerrymaheswara@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ci4Smarty\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ci4Smarty\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.1 || ^8.0",
+        "smarty/smarty": "^4.1.0"
+    },
+    "require-dev": {}
+}
