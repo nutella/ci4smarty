@@ -31,5 +31,6 @@
         "php": "^7.1 || ^8.0",
         "smarty/smarty": "^4.1.0"
     },
-    "require-dev": {}
+    "require-dev": {},
+    "minimum-stability": "dev"
 }
