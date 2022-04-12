@@ -42,7 +42,6 @@ class SmartyController extends Controller
         if ($template != null) {
             $template = preg_replace('/\s+|.tpl|\s/', '', $template) . $ext;
         } else {
-            // $method = get_class_methods($this);
             $segment = $this->request->getUri()->getSegments();
             $defaultMethod = \Config\Services::routes()->getDefaultMethod();
             if ($segment && isset($segment[1])) {
@@ -66,7 +65,7 @@ class SmartyController extends Controller
         }
 
         $args = array(
-            'data' => $data ?: $this->view,
+            'data' => isset($data) ? (array) $data : (array) $this->view,
             'layout' => $this->getLayout(),
             'template' => $template,
             'return' => false,
@@ -74,37 +73,6 @@ class SmartyController extends Controller
         $this->smarty->render($args);
 
         $this->setRendered('true');
-
-        // // opn($template, 1, 1);
-        // if (isset($data) && $data != null) {
-        //     $this->smarty->assign((array) $data);
-        // } else {
-        //     $this->smarty->assign((array) $this->view);
-        // }
-
-        // // if (!empty($this->_config['tplext']) && !strpos($template, '.' . $this->_config['tplext'] . '.tpl')) {
-        // //     $template = str_replace('.tpl', '.' . $this->_config['tplext'] . '.tpl', $template);
-        // // }
-
-        // if ($return == true) {
-        //     return $this->smarty->fetch($this->smarty->getTemplateDir(0) . $template);
-        // } else {
-        //     if ($this->view->content == null) {
-        //         $this->view->content = $this->smarty->fetch($this->smarty->getTemplateDir(0) . $template);
-        //         $this->smarty->assign((array) $this->view);
-        //     }
-        //     if ($force = false) {
-        //         $this->smarty->display($this->smarty->getTemplateDir(0) . $this->getLayout() . $ext);
-        //     } else {
-        //         if ($this->getLayout()) {
-        //             $this->smarty->display($this->smarty->getTemplateDir(0) . $this->getLayout() . $ext);
-        //         } else {
-        //             $this->smarty->display($this->smarty->getTemplateDir(0) . $template);
-        //         }
-        //     }
-        //     $this->setRendered('true');
-        // }
-
     }
 
     public function __destruct()
