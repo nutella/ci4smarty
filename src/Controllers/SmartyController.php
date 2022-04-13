@@ -32,15 +32,15 @@ class SmartyController extends Controller
         parent::initController($request, $response, $logger);
         $this->view = new \stdClass();
         $this->smarty = new Smarty();
+        $this->view->year = date('Y');
         $this->view->content = null;
 
     }
 
     public function render($template = null, $data = null, $return = false)
     {
-        $ext = \Config\SmartyConfig::$fileExtension;
         if ($template != null) {
-            $template = preg_replace('/\s+|.tpl|\s/', '', $template) . $ext;
+            $template = preg_replace('/\s+|.tpl|\s/', '', $template);
         } else {
             $segment = $this->request->getUri()->getSegments();
             $defaultMethod = \Config\Services::routes()->getDefaultMethod();
@@ -52,7 +52,7 @@ class SmartyController extends Controller
             $class = get_called_class();
             $shortClass = (new \ReflectionClass($class))->getShortName();
             $this->view->pageTitle = $shortClass;
-            $template = strtolower($shortClass) . DIRECTORY_SEPARATOR . $method . $ext;
+            $template = strtolower($shortClass) . DIRECTORY_SEPARATOR . $method;
 
             if (isset($segment[0]) && is_dir(APPPATH . 'Controllers/' . $segment[0])) {
                 if (isset($segment[2])) {
@@ -60,7 +60,7 @@ class SmartyController extends Controller
                 } else {
                     $method = $defaultMethod;
                 }
-                $template = $segment[0] . DIRECTORY_SEPARATOR . strtolower($shortClass) . DIRECTORY_SEPARATOR . $method . $ext;
+                $template = $segment[0] . DIRECTORY_SEPARATOR . strtolower($shortClass) . DIRECTORY_SEPARATOR . $method;
             }
         }
 

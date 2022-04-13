@@ -22,15 +22,9 @@
             "Ci4Smarty\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Ci4Smarty\\Tests\\": "tests/"
-        }
-    },
     "require": {
         "php": "^7.1 || ^8.0",
         "smarty/smarty": "^4.1.0"
     },
-    "require-dev": {},
     "minimum-stability": "dev"
 }
