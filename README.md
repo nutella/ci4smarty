@@ -15,7 +15,7 @@ Installation is best done via Composer. Assuming Composer is installed globally,
 
 ## Manual Installation
 Otherwise you can install manually:
-1. Download smarty and ci4smarty and put in **app/ThirdParty** folder
+1. Download **smarty** and **ci4smarty** and put in **app/ThirdParty** folder
     - https://github.com/smarty-php/smarty/archive/refs/tags/v4.1.0.zip
     - https://github.com/jerry-maheswara-github/ci4smarty/archive/refs/tags/v1.0.0.zip
 
@@ -39,7 +39,7 @@ The easy way to implement this, is by extends your controller from **SmartyContr
     }
 
 ## Config
-You can override config by adding file **SmartyConfig.php** to **app/Config** folder
+You can override config by adding file **SmartyConfig.php** to **app/Config** folder and change it
 
     <?php
         namespace Config;
@@ -52,3 +52,11 @@ You can override config by adding file **SmartyConfig.php** to **app/Config** fo
             public static $cacheDir = WRITEPATH . 'caches';
             public static $configDir = APPPATH . 'Views/configs';
         }
+
+## Feature
+This is the feature:
+- Auto render template base on Controller class and method like: **home/index** or if url segment is under folder like: **admin/dashboard/index**
+- You can also render manually: **$this->render('home/index');**
+- If you like to change layout you can add **$this->setLayout('layout');** before render, and add {$content} in the layout file as a container of rendered template;
+- You can stop render by **$this->setRendered(true);** if you will debug or print_r your code and eliminate the exception;
+- Don't forget the extension of each template file is **.tpl** (smarty)
