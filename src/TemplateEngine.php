@@ -14,6 +14,22 @@ class TemplateEngine extends Smarty
         $this->setCompileDir(\Ci4Smarty\Config\SmartyConfig::$compileDir);
         $this->setCacheDir(\Ci4Smarty\Config\SmartyConfig::$cacheDir);
         $this->setConfigDir(\Ci4Smarty\Config\SmartyConfig::$configDir);
+
+        if (class_exists(\Config\SmartyConfig::class)) {
+            if (isset(\Config\SmartyConfig::$templateDir)) {
+                $this->setTemplateDir(\Config\SmartyConfig::$templateDir);
+            }
+            if (isset(\Config\SmartyConfig::$compileDir)) {
+                $this->setCompileDir(\Config\SmartyConfig::$compileDir);
+            }
+            if (isset(\Config\SmartyConfig::$cacheDir)) {
+                $this->setCacheDir(\Config\SmartyConfig::$cacheDir);
+            }
+            if (isset(\Config\SmartyConfig::$configDir)) {
+                $this->setConfigDir(\Config\SmartyConfig::$configDir);
+            }
+        }
+
         $this->setCacheLifetime(30);
 
         $ext = \Ci4Smarty\Config\SmartyConfig::$fileExtension;
