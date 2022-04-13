@@ -21,13 +21,13 @@ Otherwise you can install manually:
 
 2. Edit and add this line on **app/Config/Autoload.php**
 
-    public $psr4 = [
-        'Ci4Smarty'   => APPPATH . 'ThirdParty/ci4smarty-1.0.0/src'
-    ];
+        public $psr4 = [
+            'Ci4Smarty'   => APPPATH . 'ThirdParty/ci4smarty-1.0.0/src'
+        ];
 
-    public $classmap = [
-        'Smarty'   => APPPATH . 'ThirdParty/smarty-4.1.0/libs/Smarty.class.php',
-    ];
+        public $classmap = [
+            'Smarty'   => APPPATH . 'ThirdParty/smarty-4.1.0/libs/Smarty.class.php',
+        ];
 
 ## Controller
 The easy way to implement this, is by extends your controller from **SmartyController**.
