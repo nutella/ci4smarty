@@ -65,14 +65,13 @@ class SmartyController extends Controller
         }
 
         $args = array(
-            'data' => isset($data) ? (array) $data : (array) $this->view,
+            'data' => $data != null ? (array) $data : (array) $this->view,
             'layout' => $this->getLayout(),
             'template' => $template,
-            'return' => false,
+            'return' => $return,
         );
-        $this->smarty->render($args);
-
         $this->setRendered('true');
+        return $this->smarty->render($args);
     }
 
     public function __destruct()

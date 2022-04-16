@@ -53,10 +53,11 @@ You can override config by adding file **SmartyConfig.php** to **app/Config** fo
             public static $configDir = APPPATH . 'Views/configs';
         }
 
-## Feature
-This is the feature:
+## Features
+This is the features:
 - Auto render template base on Controller class and method like: **home/index** or if url segment is under folder like: **admin/dashboard/index**
-- You can also render manually: **$this->render('home/index');**
-- If you like to change layout you can add **$this->setLayout('layout');** before render, and add {$content} in the layout file as a container of rendered template;
-- You can stop render by **$this->setRendered(true);** if you will debug or print_r your code and eliminate the exception;
+- You can also render manually: **$this->render('home/index');** or **$this->render('home/index', $data);** where **$data** is array or object
+- If you like to change layout you can add **$this->setLayout('layout');** before render, and add {$content} in the layout file as a container of rendered template
+- You can also use smarty **{extend}** syntax to implement your layout
+- You can stop render by **$this->setRendered(true);** if you want to debug or print_r your code and eliminate the default exception;
 - Don't forget the extension of each template file is **.tpl** (smarty)
